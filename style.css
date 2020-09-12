@@ -1,0 +1,718 @@
+/*
+	Theme Name: Intex
+	Description: Intex Co.Ltd.
+	Author: Work Capital
+	Author URI: https://www.work-capital.co.jp/
+	Version: 1.0
+	Tags: navyblue, offical page
+	License: GNU General Public License v2 or later
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/********************
+Layout
+********************/
+* {
+	font-family: 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', "ヒラギノ角ゴシック", 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ Pro W3',Roboto, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+#header {
+	background: #0844A4;
+	color: #fff;
+	padding: 10px 0;
+}
+
+#header a, #footer a {
+	display: inline-block;
+	color: inherit;
+	text-decoration: none;
+}
+
+.custom-logo {
+	height: 35px;
+	width: auto;
+}
+
+.wrapper-size {
+	padding: 0 20px;
+	max-width: 1100px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.menu-trigger {
+	display: none;
+}
+
+#header nav ul {
+	padding-left: 0;
+}
+
+#header nav li {
+	color: #fff;
+	margin-left: 20px;
+	width: auto;
+	font-size: 16px;
+	speak: normal;
+	height: auto;
+	line-height: 1.2;
+	-webkit-font-smoothing: auto;
+	display: inline-block;
+}
+
+#header li:before {
+	display: none;
+}
+
+div[class^='menu-'] li {
+	list-style: none;
+}
+
+#contact {
+	min-height: calc(100vh - 563px);
+}
+
+#footer {
+	background: #0844A4;
+	color: #fff;
+	margin-top: 80px;
+	padding: 15px 0;
+}
+
+#footer .sub-menu {
+	padding-left: 20px;
+}
+
+#footer .sub-menu li:before {
+	content: '－';
+	margin-right: 5px;
+}
+
+/********************
+Float
+********************/
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	text-align: center;
+}
+
+.alignright {
+	float: right;
+}
+
+/********************
+Animate
+********************/
+a {
+	transition: opacity 0.3s;
+}
+
+*:not(.wp-social-link) > a:hover {
+	opacity: 0.8;
+}
+
+.showing {
+	animation: show 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes show {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+
+/********************
+Title
+********************/
+h2 {
+	margin-top: 60px;
+}
+
+/********************
+Table
+********************/
+.wp-block-table table {
+	border-collapse: collapse;
+}
+
+.wp-block-table th, .wp-block-table td {
+	padding: 12px 20px;
+	border: 1px solid;
+	border-color: #9E9E9E;
+}
+
+.wp-block-table th {
+	background: #0844A4;
+	color: #fff;
+}
+
+.wp-block-table tfoot td {
+	background: #C6DDF0;
+	color: #0844A4;
+}
+
+.wp-block-table.aligncenter table {
+	width: auto;
+	display: inline-block;
+}
+
+.wp-block-table.is-style-stripes {
+	border-bottom: none;
+}
+
+.wp-block-table.is-style-single tr td:first-child {
+	background: #C6DDF0;
+	color: #0844A4;
+	font-weight: bold;
+	width: 20%;
+}
+
+/********************
+Width and Align
+********************/
+main > *:not(.alignright):not(.alignleft), 
+main > *[class*=wp-block-]:not(.alignright):not(.alignleft) {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+main > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+	width: calc(100% - 80px);
+	max-width: 1100px;
+}
+
+main > *.alignwide {
+	width: calc(100% - 80px);
+	max-width: 1300px;
+}
+
+@media screen and (max-width: 768px) {
+	main > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide),
+	main > .alignwide, main > .is-style-wide {
+		width: calc(100% - 40px);
+	}
+}
+
+.alignleft {
+	margin-left: calc((100vw - 1100px) / 2);
+}
+
+.alignright {
+	margin-right: calc((100vw - 1100px) / 2);
+}
+
+.aligncenter {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@media(max-width: 1140px) {
+	.alignleft {
+		margin-left: 20px;
+	}
+
+	.align-right {
+		margin-right: 20px;
+	}
+}
+
+/********************
+Separator
+********************/
+.wp-block-separator.is-style-wide {
+	border-bottom: 1px solid #8f98a1;
+	border-top: none;
+}
+
+.wp-block-separator.is-style-default {
+	border-color: #8f98a1;
+	border-style: solid;
+	max-width: 100px;
+}
+
+/********************
+File Blocks
+********************/
+.wp-block-file {
+	border: 2px solid #ddd;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 20px;
+}
+
+.wp-block-file .wp-block-file__button {
+	display: inline-block;
+	background: #C6DDF0;
+	color: #0844A4;
+	font-weight: bold;
+	padding: 20px;
+	border-left: 2px solid #d4d4d4;
+	border-radius: 0;
+	font-size: 16px;
+}
+
+.wp-block-file a.wp-block-file__button:active, 
+.wp-block-file a.wp-block-file__button:focus, 
+.wp-block-file a.wp-block-file__button:hover, 
+.wp-block-file a.wp-block-file__button:visited {
+	color: #0844A4;
+}
+
+/********************
+Button Blocks
+********************/
+.wp-block-button {
+	margin-right: 8px;
+	margin-bottom: 8px;
+	display: inline-block;
+}
+
+.wp-block-button__link {
+	padding: 8px 24px;
+	display: inline-block;
+	cursor: pointer;
+	background: #0844A4;
+	color: #fff;
+	border-radius: 6px;
+	min-width: 150px;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+	border: 2px solid;
+	background-color: transparent;
+	padding: calc(8px - 2px) calc(24px - 2px);
+	color: #0844A4;
+}
+
+.wp-block-button.is-style-full {
+	height: 100%;
+	width: 100%;
+}
+
+.wp-block-button.is-style-full .wp-block-button__link {
+	padding: 20px 40px;
+	height: 100%;
+	width: 100%;
+	min-height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.wp-block-button.is-style-wide .wp-block-button__link,
+.wp-block-jetpack-button.is-style-wide .wp-block-button__link {
+	min-width: 300px;
+}
+
+/********************
+Video Blocks
+********************/
+.wp-block-video video {
+	width: 100%;
+}
+
+.wp-block-video.aligncenter video {
+	width: auto;
+}
+
+/********************
+Quote and PullQute
+********************/
+/* Qutote 共通 */
+.wp-block-quote cite,
+.wp-block-pullquote cite {
+	color: #6D6D6D;
+	display: block;
+	font-size: 14px;
+	font-style: normal;
+}
+
+
+/*PullQuote Blocks*/
+.wp-block-pullquote {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	padding-top: 48px;
+	padding-bottom: 48px;
+	border-top: 4px solid #555d66;
+	border-bottom: 4px solid #555d66;
+	text-align: center;
+}
+
+.wp-block-pullquote p {
+	font-size: 32px;
+}
+
+.wp-block-pullquote cite {
+	margin-top: 28px;
+}
+
+/********************
+Colors
+********************/
+:root .has-white-background-color {
+	background-color: #FFFFFF;
+}
+
+:root .has-white-color {
+	color: #FFFFFF;
+}
+
+:root .has-black-background-color {
+	background-color: #000000;
+}
+
+:root .has-black-color {
+	color: #000000;
+}
+
+:root .has-blue-background-color {
+	background-color: #0844A4;
+}
+
+:root .has-blue-color {
+	color: #0844A4;
+}
+
+:root .has-sky-background-color {
+	background-color: #C6DDF0;
+}
+
+:root .has-sky-color {
+	color: #C6DDF0;
+}
+
+:root .has-gray-background-color {
+	background-color: #EEEEEE;
+}
+
+:root .has-gray-color {
+	color: #EEEEEE;
+}
+
+/********************
+Image Blocks
+********************/
+.wp-block-image img {
+	height: auto;
+}
+
+/********************
+Media and Text Blocks
+********************/
+main > .wp-block-media-text.alignwide {
+	max-width: 1100px;
+}
+
+.wp-block-media-text__media img {
+	height: auto;
+}
+
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+	padding-left: 0;
+}
+
+/********************
+Margin　共通
+********************/
+.wp-block-buttons,
+block-image:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter),
+.wp-block-gallery,
+.wp-block-cover,
+.wp-block-image,
+.wp-block-quote,
+.alignnone, 
+.aligncenter, 
+.alignleft, 
+.alignright, 
+.alignwide,
+.wp-block-separator {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+/********************
+WordPress Customize Blocks
+********************/
+/*リンク付きの画像*/
+*[class*='wp-block-'] .wp-block-image {
+	margin: 20px 0;
+}
+
+.wp-block-image.is-style-link {
+	position: relative;
+}
+
+.wp-block-image.is-style-link figcaption {
+	background: rgba(8, 68, 164, 0.6);
+	color: #fff;
+	margin-top: 0;
+	padding: 15px 10px;
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	box-sizing: border-box;
+	bottom: 0;
+	font-weight: bold;
+	border-radius: 0;
+	margin-bottom: 0;
+}
+
+/********************
+Visual
+********************/
+#visual {
+	position: relative;
+}
+
+.gray-title {
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	padding: 30px 80px;
+	position: absolute;
+	font-size: 50px;
+	bottom: 50px;
+}
+
+.white-title {
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.blue-title {
+	background: #C6DDF0;
+	min-height: 150px;
+	display: flex;
+	align-items: center;
+}
+
+.blue-title h1 {
+	text-align: center;
+}
+
+/********************
+Latest Posts
+********************/
+.wp-block-latest-posts.has-dates li {
+	display: flex;
+	align-items: center;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+	margin: 10px 0;
+}
+
+.wp-block-latest-posts a {
+	color: #000;
+	margin-left: 20px;
+}
+
+/********************
+Contact Path
+********************/
+.contact-path {
+	padding-left: 0;
+	list-style: none;
+	margin-top: 20px;
+	margin-bottom: 60px;
+}
+
+.contact-path li {
+	display: inline-block;
+	color: #428bca;
+	margin-right: 10px;
+}
+
+.contact-path li:after {
+	content: '/';
+	color: #999;
+	margin-left: 10px;
+}
+
+.contact-path li:last-child {
+	color: #606060;
+}
+
+.contact-path li:last-child:after {
+	display: none;
+}
+
+.contact-path a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/********************
+Heading
+********************/
+h2.is-style-line:after,
+h3.is-style-line:after {
+	content: '';
+	width: 150px;
+	height: 3px;
+	background: #0844A4;
+	display: block;
+	margin-top: 5px;
+}
+
+h2.is-style-decoration,
+h3.is-style-decoration {
+	display: flex;
+}
+
+h2.is-style-decoration:before,
+h3.is-style-decoration:before {
+	content: '\f180';
+	font-family: dashicons;
+	color: #0844A4;
+	margin-right: 5px;
+	display: inline-flex;
+	align-items: center
+}
+
+.wp-block-intex-tag-heading {
+	display: flex;
+	margin-top: 60px;
+	margin-bottom: 20px;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.wp-block-intex-tag-heading > * {
+	margin: 0;
+}
+
+.wp-block-intex-tag-heading > p {
+	font-size: 14px;
+	background: #000;
+	color: #fff;
+	padding: 3px 8px;
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.wp-block-intex-tag-heading.is-style-reverse {
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+}
+
+.wp-block-intex-tag-heading.is-style-reverse > p {
+	margin-left: 0;
+	margin-right: 10px;
+}
+
+/********************
+Link Text
+********************/
+#contact p a[data-type="URL"] {
+	color: #0844A4;
+}
+
+/********************
+Gallery
+********************/
+.blocks-gallery-grid, .wp-block-gallery {
+	width: 100%;
+}
+
+.wp-block-gallery .blocks-gallery-caption {
+	width: 100%;
+	text-align: center;
+}
+
+/********************
+Cover Block
+********************/
+.wp-block-cover.is-style-card {
+	height: auto;
+	border: 1px solid #ddd;
+}
+
+.wp-block-cover.is-style-card .wp-block-cover__inner-container {
+	width: 100%;
+	height: 100%;
+}
+
+.wp-block-cover.is-style-card .wp-block-media-text.alignwide {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.wp-block-cover.is-style-card p {
+	margin: 0;
+}
+
+
+/********************
+Short Code
+********************/
+.news-item {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.news-component > * {
+	display: inline-block;
+	margin-right: 20px;
+	vertical-align: middle;
+}
+
+.category {
+	background: #0844A4;
+	color: #fff;
+	padding: 3px 8px;
+	font-size: 14px;
+}
+
+.news-item a {
+	color: #000;
+	text-decoration: underline;
+}
+
+/********************
+Form Block
+********************/
+.contact-form input[type='text'], 
+.contact-form input[type='email'], 
+.contact-form input[type='tel'], 
+.contact-form input[type='url'],
+.contact-form textarea {
+	border-radius: 0;
+	border: 1px solid #d4d4d4;
+	padding: 10px 12px;
+}
+
+.contact-form input[type='text']:focus, 
+.contact-form input[type='email']:focus, 
+.contact-form input[type='tel']:focus, 
+.contact-form input[type='url']:focus,
+.contact-form textarea:focus {
+	outline-color: #0844A4;
+}
+
+.contact-form label span {
+	color: #888;
+}
