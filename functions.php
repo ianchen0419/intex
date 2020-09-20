@@ -173,7 +173,7 @@ function make_bread_nav_list($post){
 	'</ul>';
 }
 
-// カテゴリーつきの投稿一覧ショートコード
+// ホームページ＆ニュース一覧　カテゴリーつきの投稿一覧ショートコード
 add_shortcode('myposts', 'myposts_function');
 function myposts_init(){
 	function myposts_function($atts){

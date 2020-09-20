@@ -112,11 +112,12 @@ Float
 /********************
 Animate
 ********************/
-a {
+a, button {
 	transition: opacity 0.3s;
 }
 
-*:not(.wp-social-link) > a:hover {
+*:not(.wp-social-link) > a:hover,
+button:hover {
 	opacity: 0.8;
 }
 
@@ -693,26 +694,50 @@ Short Code
 }
 
 /********************
-Form Block
+Form
 ********************/
-.contact-form input[type='text'], 
-.contact-form input[type='email'], 
-.contact-form input[type='tel'], 
-.contact-form input[type='url'],
-.contact-form textarea {
-	border-radius: 0;
-	border: 1px solid #d4d4d4;
-	padding: 10px 12px;
+.form-item {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column-reverse;
+	margin-bottom: 15px;
 }
 
-.contact-form input[type='text']:focus, 
-.contact-form input[type='email']:focus, 
-.contact-form input[type='tel']:focus, 
-.contact-form input[type='url']:focus,
-.contact-form textarea:focus {
+.form-item label {
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+}
+
+.form-item > * {
+	margin: 5px 0;
+}
+
+.form-item input,
+.form-item textarea {
+	width: 600px;
+	padding: 12px 10px;
+	border: 1px solid #d1d1d1;
+	border-radius: 2px;
+}
+
+.form-item input:read-only,
+.form-item textarea:read-only {
+	background: #f2f2f2;
+	color: #9D9D9D;
+}
+
+.form-item input:required + label:after {
+	content: '必須';
+	background: #ff5d55;
+	color: #fff;
+	border-radius: 4px;
+	padding: 2px 4px;
+	margin-left: 10px;
+	font-size: small;
+}
+
+.form-item input:focus,
+.form-item textarea:focus {
 	outline-color: #0844A4;
-}
-
-.contact-form label span {
-	color: #888;
 }
