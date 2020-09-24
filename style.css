@@ -17,7 +17,7 @@ Layout
 	box-sizing: inherit;
 }
 
-body {
+html, body {
 	margin: 0;
 	box-sizing: border-box;
 }
@@ -75,7 +75,18 @@ div[class^='menu-'] li {
 }
 
 #contact {
-	min-height: calc(100vh - 563px);
+	min-height: calc(100% - 563px);
+}
+
+@media all and (-ms-high-contrast: none){
+	html, body {
+		height: 100%;
+	}
+
+	#contact {
+		min-height: calc(100vh - 509px);
+		display: block;
+	}
 }
 
 #footer {
@@ -151,7 +162,8 @@ Table
 	border-collapse: collapse;
 }
 
-.wp-block-table th, .wp-block-table td {
+.wp-block-table th, .wp-block-table td,
+.wp-block-advgb-table td {
 	padding: 12px 20px;
 	border: 1px solid;
 	border-color: #9E9E9E;
@@ -315,6 +327,12 @@ Button Blocks
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+@media all and (-ms-high-contrast: none){
+	.wp-block-button.is-style-full .wp-block-button__link {
+		height: 100px;
+	}
 }
 
 .wp-block-button.is-style-wide .wp-block-button__link,
@@ -507,6 +525,12 @@ Visual
 	min-height: 150px;
 	display: flex;
 	align-items: center;
+}
+
+@media all and (-ms-high-contrast: none){
+	.blue-title {
+		height: 150px;
+	}
 }
 
 .blue-title h1 {

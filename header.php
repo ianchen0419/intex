@@ -23,7 +23,7 @@
 					</td>
 					<td align="right">
 						<nav>
-						<?php wp_nav_menu(array('theme_location' => 'new-menu')); ?>
+						<?php wp_nav_menu(array('theme_location' => 'primary')); ?>
 						</nav>
 						<div class="dashicons dashicons-menu-alt3 menu-trigger" tabindex="0" onclick="document.body.classList.add('show-nav');"></div>
 					</td>
