@@ -208,8 +208,8 @@ var withInspectorControls = wp.compose.createHigherOrderComponent(function(Block
 								Button,
 								{
 									value: '0',
-									isPrimary: (props.attributes.margin === '0'),
-									isDefault: (props.attributes.margin !== '0'),
+									isPressed: (props.attributes.margin === '0'),
+									isSmall: true,
 									onClick: onClickMarginButton,
 								},
 								'なし',
@@ -218,8 +218,8 @@ var withInspectorControls = wp.compose.createHigherOrderComponent(function(Block
 								Button,
 								{
 									value: '20',
-									isPrimary: (props.attributes.margin === '20'),
-									isDefault: (props.attributes.margin !== '20'),
+									isPressed: (props.attributes.margin === '20'),
+									isSmall: true,
 									onClick: onClickMarginButton,
 								},
 								'小'
@@ -228,8 +228,8 @@ var withInspectorControls = wp.compose.createHigherOrderComponent(function(Block
 								Button,
 								{
 									value: '40',
-									isPrimary: (props.attributes.margin === '40'),
-									isDefault: (props.attributes.margin !== '40'),
+									isPressed: (props.attributes.margin === '40'),
+									isSmall: true,
 									onClick: onClickMarginButton,
 								},
 								'中'
@@ -238,23 +238,25 @@ var withInspectorControls = wp.compose.createHigherOrderComponent(function(Block
 								Button,
 								{
 									value: '60',
-									isPrimary: (attributes.margin === '60'),
-									isDefault: (attributes.margin !== '60'),
+									isPressed: (attributes.margin === '60'),
+									isSmall: true,
 									onClick: onClickMarginButton,
 								},
 								'大'
 							),
-							el(
-								Button,
-								{
-									value: '',
-									isPrimary: (attributes.margin === ''),
-									isDefault: (attributes.margin !== ''),
-									onClick: onClickMarginButton,
-								},
-								'リセット'
-							),
-						)
+
+						),
+						el(
+							Button,
+							{
+								value: '',
+								// isPressed: (attributes.margin === ''),
+								// isDefault: (attributes.margin !== ''),
+								isSmall: true,
+								onClick: onClickMarginButton,
+							},
+							'リセット'
+						),
 					)
 				);
 

@@ -3,6 +3,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<?php wp_head(); ?>
+	<title><?php bloginfo('name'); wp_title('|'); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<meta name="description" content="<?php bloginfo('description') ?>" />
 	<meta name="keywords" content="高演色ランプ,Ra98,半導体照明,イエローランプ,紫外線ランプ,UV,UVC,紫外線硬化ランプ,誘虫器,D50" />
