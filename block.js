@@ -10,6 +10,17 @@ var withSelect=wp.data.withSelect;
 var useSelect=wp.data.useSelect;
 var useEntityProp=wp.coreData.useEntityProp;
 
+var InspectorControls = wp.blockEditor.InspectorControls;
+var PanelBody = wp.components.PanelBody;
+var PanelRow = wp.components.PanelRow;
+var BaseControl=wp.components.BaseControl;
+var RadioControl=wp.components.RadioControl;
+var ToggleControl=wp.components.ToggleControl;
+var ButtonGroup=wp.components.ButtonGroup;
+var Button=wp.components.Button;
+
+var assign=lodash.assign
+
 // 画像ブロック　リンク付きスタイル
 wp.blocks.registerBlockStyle(
 	'core/image', 
@@ -169,3 +180,125 @@ wp.plugins.registerPlugin(
 		icon: '',
 	}
 );
+
+// 上下マージン設定
+var withInspectorControls = wp.compose.createHigherOrderComponent(function(BlockEdit) {
+	return function(props) {
+		// console.log(props)
+		// marginTopSettings;
+
+		// if(allowedMarginBlocks.indexOf(props.name) !== -1){
+		var attributes = props.attributes;
+		// console.log(props.attributes.margin);
+
+		var marginTopSettings=el(
+					PanelBody,
+					{
+						title: '上下マージン設定',
+					},
+					el(
+						BaseControl,
+						{
+							label: '上下マージンを設定せよ',
+						},
+						el(
+							ButtonGroup,
+							{},
+							el(
+								Button,
+								{
+									value: '0',
+									isPrimary: (props.attributes.margin === '0'),
+									isDefault: (props.attributes.margin !== '0'),
+									onClick: onClickMarginButton,
+								},
+								'なし',
+							),
+							el(
+								Button,
+								{
+									value: '20',
+									isPrimary: (props.attributes.margin === '20'),
+									isDefault: (props.attributes.margin !== '20'),
+									onClick: onClickMarginButton,
+								},
+								'小'
+							),
+							el(
+								Button,
+								{
+									value: '40',
+									isPrimary: (props.attributes.margin === '40'),
+									isDefault: (props.attributes.margin !== '40'),
+									onClick: onClickMarginButton,
+								},
+								'中'
+							),
+							el(
+								Button,
+								{
+									value: '60',
+									isPrimary: (attributes.margin === '60'),
+									isDefault: (attributes.margin !== '60'),
+									onClick: onClickMarginButton,
+								},
+								'大'
+							),
+							el(
+								Button,
+								{
+									value: '',
+									isPrimary: (attributes.margin === ''),
+									isDefault: (attributes.margin !== ''),
+									onClick: onClickMarginButton,
+								},
+								'リセット'
+							),
+						)
+					)
+				);
+
+		function onClickMarginButton(ev){
+			var marginValue=ev.currentTarget.value;
+			if(marginValue==''){
+				props.setAttributes({
+					margin: marginValue,
+					className: '',
+				});
+			}else{
+				props.setAttributes({
+					margin: marginValue,
+					className: 'margin'+marginValue,
+				});
+			}
+
+		}
+
+		return el(
+			wp.element.Fragment,
+			{},
+			el(
+				BlockEdit,
+				props,
+			),
+			el(
+				wp.blockEditor.InspectorControls,
+				{initialOpen: false},
+				marginTopSettings,
+			),
+		)
+
+
+	};
+}, 'withInspectorControls');
+wp.hooks.addFilter('editor.BlockEdit', 'my-plugin/add-margin', withInspectorControls);
+
+function addAttribute(settings) {
+	settings.attributes=assign(settings.attributes, {
+		margin: {
+			type: 'string',
+		},
+	} );
+	return settings;
+}
+wp.hooks.addFilter('blocks.registerBlockType', 'my-plugin/add-attr', addAttribute);
