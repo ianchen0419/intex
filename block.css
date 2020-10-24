@@ -64,6 +64,12 @@ h3.is-style-decoration:before {
 	align-items: center
 }
 
+/*ボタン　一般*/
+.wp-block-button .wp-block-button__link,
+.wp-block-jetpack-button .wp-block-button__link {
+	min-width: 150px;
+}
+
 /*ボタン　全幅*/
 .wp-block-button.is-style-full {
 	height: 100%;
@@ -80,11 +86,6 @@ h3.is-style-decoration:before {
 	justify-content: center;
 }
 
-/*ボタン　幅広*/
-.wp-block-button.is-style-wide .wp-block-button__link {
-	min-width: 300px;
-}
-
 /*カバー　カード式*/
 .wp-block-cover.is-style-card {
 	border: 1px solid #ddd;
@@ -94,7 +95,6 @@ h3.is-style-decoration:before {
 .wp-block-table.is-style-single tr td:first-child {
 	background: #C6DDF0;
 	color: #0844A4;
-	width: 20%;
 	font-weight: bold;
 }
 
@@ -136,6 +136,11 @@ h3.is-style-decoration:before {
 .wp-block-intex-tag-heading.is-style-reverse .block-editor-block-list__layout > p {
 	margin-left: 0;
 	margin-right: 10px;
+}
+
+.wp-block-intex-tag-heading.is-style-reverse .block-editor-block-list__layout > h2,
+.wp-block-intex-tag-heading.is-style-reverse .block-editor-block-list__layout > h3 {
+	width: auto;
 }
 
 /*********************************
@@ -181,6 +186,10 @@ h3.is-style-decoration:before {
 .wp-block-table th {
 	background: #0844A4;
 	color: #fff;
+}
+
+.wp-block-table td {
+	background: #fff;
 }
 
 .wp-block-table td, .wp-block-table th {
@@ -277,4 +286,10 @@ h3.is-style-decoration:before {
 .margin80 {
 	margin-bottom: 80px !important;
 	margin-top: 80px !important;
+}
+
+/*カバーブロック　テキスト色調整*/
+.wp-block-cover-image .wp-block-cover__inner-container, 
+.wp-block-cover .wp-block-cover__inner-container {
+	color: inherit;
 }

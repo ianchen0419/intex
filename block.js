@@ -66,15 +66,6 @@ wp.blocks.registerBlockStyle(
 	}
 );
 
-// ボタン　幅広
-wp.blocks.registerBlockStyle(
-	'core/button', 
-	{
-		name: 'wide',
-		label: '幅広'
-	}
-);
-
 // カバー　カード式
 wp.blocks.registerBlockStyle(
 	'core/cover', 
@@ -250,8 +241,6 @@ var withInspectorControls = wp.compose.createHigherOrderComponent(function(Block
 							Button,
 							{
 								value: '',
-								// isPressed: (attributes.margin === ''),
-								// isDefault: (attributes.margin !== ''),
 								isSmall: true,
 								onClick: onClickMarginButton,
 							},

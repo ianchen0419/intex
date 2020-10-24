@@ -139,16 +139,38 @@ body table.advgb-table-frontend td, table.advgb-table-frontend tr {
 	font-size: 14px;
 }
 
-.wp-block-button.is-style-wide,
-.wp-block-button.is-style-wide .wp-block-button__link {
+.wp-block-table.aligncenter td, 
+.wp-block-table.aligncenter th, 
+.wp-block-table.alignleft td, 
+.wp-block-table.alignleft th, 
+.wp-block-table.alignright td, 
+.wp-block-table.alignright th {
+	word-break: break-word;
+}
+
+.wp-block-button,
+.wp-block-button .wp-block-button__link {
 	width: 100%;
 }
 
-.wp-block-button.is-style-wide .wp-block-button__link,
-.wp-block-jetpack-button.is-style-wide .wp-block-button__link {
+.wp-block-button .wp-block-button__link,
+.wp-block-jetpack-button .wp-block-button__link {
 	min-width: auto;
 }
 
+main#contact > form {
+	width: calc(100% - 40px);
+}
+
 .form-item input, .form-item textarea {
+	width: 100%;
+}
+
+.wp-block-table {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.wp-block-table table {
 	width: 100%;
 }

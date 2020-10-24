@@ -160,13 +160,24 @@ Table
 ********************/
 .wp-block-table table {
 	border-collapse: collapse;
+	width: auto;
+}
+
+.wp-block-table td {
+	background: #fff;
 }
 
 .wp-block-table th, .wp-block-table td,
 .wp-block-advgb-table td {
-	padding: 12px 20px;
+	padding: 8px 20px;
 	border: 1px solid;
 	border-color: #9E9E9E;
+}
+
+.wp-block-column .wp-block-table th,
+.wp-block-column .wp-block-table td,
+.wp-block-column .wp-block-advgb-table td {
+	padding: 8px 10px;
 }
 
 .wp-block-table th {
@@ -192,7 +203,15 @@ Table
 	background: #C6DDF0;
 	color: #0844A4;
 	font-weight: bold;
-	width: 20%;
+}
+
+.wp-block-table.aligncenter td, 
+.wp-block-table.aligncenter th, 
+.wp-block-table.alignleft td, 
+.wp-block-table.alignleft th, 
+.wp-block-table.alignright td, 
+.wp-block-table.alignright th {
+	word-break: normal;
 }
 
 /********************
@@ -239,7 +258,7 @@ main > *.alignwide {
 		margin-left: 20px;
 	}
 
-	.align-right {
+	.alignright {
 		margin-right: 20px;
 	}
 }
@@ -305,6 +324,7 @@ Button Blocks
 	color: #fff;
 	border-radius: 6px;
 	min-width: 150px;
+	line-height: 1.5;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link {
@@ -335,9 +355,9 @@ Button Blocks
 	}
 }
 
-.wp-block-button.is-style-wide .wp-block-button__link,
-.wp-block-jetpack-button.is-style-wide .wp-block-button__link {
-	min-width: 300px;
+.wp-block-button .wp-block-button__link,
+.wp-block-jetpack-button .wp-block-button__link {
+	min-width: 240px;
 }
 
 /********************
@@ -473,6 +493,7 @@ WordPress Customize Blocks
 /*リンク付きの画像*/
 *[class*='wp-block-'] .wp-block-image {
 	margin: 20px 0;
+	width: 100%;
 }
 
 .wp-block-image.is-style-link {
@@ -689,6 +710,11 @@ Cover Block
 	margin: 0;
 }
 
+.wp-block-cover-image .wp-block-cover__inner-container, 
+.wp-block-cover .wp-block-cover__inner-container {
+	color: inherit;
+}
+
 
 /********************
 Short Code
@@ -720,6 +746,11 @@ Short Code
 /********************
 Form
 ********************/
+
+main#contact > form {
+	width: 600px;
+}
+
 .form-item {
 	display: flex;
 	flex-wrap: wrap;
