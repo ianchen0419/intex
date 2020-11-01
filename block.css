@@ -39,7 +39,7 @@ h3.is-style-line {
 h2.is-style-line:before,
 h3.is-style-line:before {
 	content: '';
-	width: 150px;
+	width: 100%;
 	height: 3px;
 	background: #0844A4;
 	display: block;

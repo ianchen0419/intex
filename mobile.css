@@ -174,3 +174,7 @@ main#contact > form {
 .wp-block-table table {
 	width: 100%;
 }
+
+.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+	padding: 0;
+}
