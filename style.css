@@ -94,6 +94,7 @@ div[class^='menu-'] li {
 	color: #fff;
 	margin-top: 80px;
 	padding: 15px 0;
+	clear: both;
 }
 
 #footer .sub-menu {
@@ -160,7 +161,6 @@ Table
 ********************/
 .wp-block-table table {
 	border-collapse: collapse;
-	width: auto;
 }
 
 .wp-block-table td {
