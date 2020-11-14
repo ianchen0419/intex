@@ -6,7 +6,7 @@
 	<title><?php bloginfo('name'); wp_title('|'); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<meta name="description" content="<?php bloginfo('description') ?>" />
-	<meta name="keywords" content="高演色ランプ,Ra98,半導体照明,イエローランプ,紫外線ランプ,UV,UVC,紫外線硬化ランプ,誘虫器,D50" />
+	<meta name="keywords" content="<?php echo (get_current_blog_id()==1)?'高演色ランプ,Ra98,半導体照明,イエローランプ,紫外線ランプ,UV,UVC,紫外線硬化ランプ,誘虫器,D50':'High CRI products,Ra98,Semiconductor Lamp,Yellow Lamp,UV Lamp,UV,UVC,UV Curing Lamp,Insect Killer Equipement,D50' ?>" />
 	<link rel="stylesheet prefetch" href="<?php bloginfo('template_directory') ?>/style.css" />
 	<link rel="stylesheet prefetch" href="<?php bloginfo('template_directory') ?>/mobile.css" media="screen and (max-width: 768px)" />
 </head>

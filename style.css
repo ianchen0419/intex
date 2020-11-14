@@ -75,7 +75,7 @@ div[class^='menu-'] li {
 }
 
 #contact {
-	min-height: calc(100% - 563px);
+	min-height: calc(100vh - 563px);
 }
 
 @media all and (-ms-high-contrast: none){
@@ -169,7 +169,7 @@ Table
 
 .wp-block-table th, .wp-block-table td,
 .wp-block-advgb-table td {
-	padding: 8px 16px;
+	padding: 8px 10px;
 	border: 1px solid;
 	border-color: #9E9E9E;
 	font-size: 15px;
@@ -207,6 +207,10 @@ Table
 
 .wp-block-table.is-style-stripes {
 	border-bottom: none;
+}
+
+.wp-block-table.is-style-stripes tr:nth-child(odd) td{
+	background: #eee;
 }
 
 .wp-block-table.is-style-single tr td:first-child {
@@ -632,6 +636,15 @@ h3.is-style-line:after {
 	margin-top: 5px;
 }
 
+.wp-block-intex-tag-heading h2.is-style-line:after,
+.wp-block-intex-tag-heading h3.is-style-line:after {
+	display: none;
+}
+
+.wp-block-intex-tag-heading {
+	border-bottom: 3px solid #0844A4;
+}
+
 h2.is-style-decoration,
 h3.is-style-decoration {
 	display: flex;
@@ -793,13 +806,20 @@ main#contact > form {
 }
 
 .form-item input:required + label:after {
-	content: '必須';
 	background: #ff5d55;
 	color: #fff;
 	border-radius: 4px;
 	padding: 2px 4px;
 	margin-left: 10px;
 	font-size: small;
+}
+
+.form-item input:required + label:lang(ja):after {
+	content: '必須';
+}
+
+.form-item input:required + label:lang(en-US):after {
+	content: 'Required';
 }
 
 .form-item input:focus,

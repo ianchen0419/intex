@@ -21,6 +21,13 @@ var Button=wp.components.Button;
 
 var assign=lodash.assign
 
+// wp.blocks.registerBlockType(
+// 	'core/heading',
+// 	{
+// 		supports: { align: ["wide","full"], default: '' },
+// 	}
+// );
+
 // 画像ブロック　リンク付きスタイル
 wp.blocks.registerBlockStyle(
 	'core/image', 
@@ -99,7 +106,7 @@ wp.blocks.registerBlockType('intex/tag-heading', {
 			},
 		],
 	},
-
+	
 	edit: function(props) {
 		return el(
 			'div',

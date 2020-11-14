@@ -98,6 +98,11 @@ h3.is-style-decoration:before {
 	font-weight: bold;
 }
 
+/* ストライプテーブル */
+.wp-block-table.is-style-stripes tr:nth-child(odd) td{
+	background: #eee;
+}
+
 /*********************************
 レジスターブロック
 *********************************/
@@ -129,8 +134,9 @@ h3.is-style-decoration:before {
 }
 
 .wp-block-intex-tag-heading.is-style-reverse .block-editor-block-list__layout {
-	flex-direction: row-reverse;
-	justify-content: flex-end;
+	flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
 .wp-block-intex-tag-heading.is-style-reverse .block-editor-block-list__layout > p {
