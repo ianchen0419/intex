@@ -363,6 +363,10 @@ Button Blocks
 	justify-content: center;
 }
 
+.wp-block-button.is-style-full .wp-block-button__link:lang(en) {
+	min-height: 121px;
+}
+
 @media all and (-ms-high-contrast: none){
 	.wp-block-button.is-style-full .wp-block-button__link {
 		height: 100px;
