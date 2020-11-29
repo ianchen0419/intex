@@ -32,7 +32,7 @@
 			<label for="your_name">Name</label>
 		</div>
 		<div class="form-item">
-			<input type="email" name="your_email" id="your_email" required />
+			<input type="email" name="your_email" id="your_email" required oninput="checkEmail(this)" />
 			<label for="your_email">E-mail address</label>
 		</div>
 		<div class="form-item">
@@ -55,6 +55,12 @@
 		</div>
 	</form>
 </main>
-
+<script type="text/javascript">
+	var emailInput=document.querySelector('#your_email');
+	var emailInput2=document.querySelector('#your_email2');
+	function checkEmail(ths){
+		emailInput2.pattern=ths.value;
+	}
+</script>
 <?php $_SESSION['conf']=true; ?>
 <?php get_footer();?>

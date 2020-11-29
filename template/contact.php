@@ -32,11 +32,11 @@
 			<label for="your_name">お名前</label>
 		</div>
 		<div class="form-item">
-			<input type="email" name="your_email" id="your_email" required />
+			<input type="email" name="your_email" id="your_email" required oninput="checkEmail(this)" />
 			<label for="your_email">メールアドレス</label>
 		</div>
 		<div class="form-item">
-			<input type="email" name="your_email2" id="your_email2" required />
+			<input type="email" name="your_email2" id="your_email2" />
 			<label for="your_email2">メールアドレス（確認用）</label>
 		</div>
 		<div class="form-item">
@@ -55,6 +55,12 @@
 		</div>
 	</form>
 </main>
-
+<script type="text/javascript">
+	var emailInput=document.querySelector('#your_email');
+	var emailInput2=document.querySelector('#your_email2');
+	function checkEmail(ths){
+		emailInput2.pattern=ths.value;
+	}
+</script>
 <?php $_SESSION['conf']=true; ?>
 <?php get_footer();?>
