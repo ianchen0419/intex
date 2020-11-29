@@ -13,16 +13,12 @@
 <main id="contact">
 	<?php
 		make_bread_nav_list($post);
-		
-		error_reporting(0);
-		require_once(ABSPATH . WPINC . '/class-phpmailer.php');
+		// error_reporting(0);
+		include_once(ABSPATH . WPINC . '/PHPMailer/PHPMailer.php');
+		include_once(ABSPATH . WPINC . '/PHPMailer/Exception.php');
+		include_once(ABSPATH . WPINC . '/PHPMailer/SMTP.php');
 
 		if(isset($_SESSION['fin'])==true){
-
-			//この度はお問い合わせをいただき、誠にありがとうございます。
-			while(have_posts()): the_post();
-				the_content();
-			endwhile;
 
 			//PHP INJECTION対策
 			function _post($str){
@@ -44,8 +40,8 @@
 
 			//ユーザー向けメールヘッダー
 			$mail_header_for_user=
-				"【"._post('your_company')."】"."\n".
-				"【"._post('your_name')."】様"."\n".
+				_post('your_company')."\n".
+				_post('your_name')."様"."\n".
 
 				"\n\n".
 
@@ -88,7 +84,7 @@
 
 			/**************************************************/
 			//ユーザーへメール
-			$mailer = new PHPMailer();
+			$mailer = new PHPMailer\PHPMailer\PHPMailer();
 			$mailer->SMTPSecure = "ssl";
 			$mailer->Host = "smtp.gmail.com";
 			// $mailer->Host = "smtp.intexs.com";
@@ -124,8 +120,11 @@
 			$mailer->AddAddress('ianchen0419@gmail.com');
 			// $mailer->AddAddress($mail_address_for_admin);
 			if($mailer->Send()){
-				echo '';
-		 	}else{
+				//この度はお問い合わせをいただき、誠にありがとうございます。
+				while(have_posts()): the_post();
+					the_content();
+				endwhile;
+		 	}else {
 				echo '<p>失敗しました</p>';
 			}
 
